@@ -5,8 +5,8 @@ abstract class Game {
 
     // Стандартный конструктор
     Game() {
-        title = "none";     // По умолчанию название "неизвестно"
-        rating = 0;            // Рейтинг 0
+        title = "none";
+        rating = 0;
     }
 
     // Параметризированный конструктор
@@ -17,8 +17,8 @@ abstract class Game {
 
     // Копирующий конструктор
     Game(Game ob) {
-        title = ob.title;      // Копирование названия
-        rating = ob.rating;    // Копирование рейтинга
+        title = ob.title;
+        rating = ob.rating;
     }
 
     // Метод доступа к названию
@@ -40,14 +40,14 @@ abstract class Game {
     abstract String genre(); // Возвращает жанр игры
 }
 
-// Подкласс RPG — средний уровень иерархии (тип RPG)
+// Подкласс RPG
 class RPG extends Game {
     private String difficulty; // Параметр RPG (уровень сложности)
 
     // Конструктор без параметров
     RPG() {
         super();                // Вызов конструктора суперкласса
-        difficulty = "EASY";    // Уровень сложности по умолчанию
+        difficulty = "EASY";    // Уровень сложности по умолчанию EASY
     }
 
     // Конструктор с параметрами
@@ -78,16 +78,16 @@ class RPG extends Game {
     }
 }
 
-// Подкласс  — тип Roguelike
+// Подкласс Roguelike
 class Roguelike extends Game {
     private int levelCount;     // Количество уровней
 
     // Конструктор без параметров
     Roguelike() {
         super();                // Вызов конструктора суперкласса
-        levelCount = 0;         // Уровни по умолчанию
+        levelCount = 0;
     }
-
+    
     // Конструктор с параметрами
     Roguelike(String t, int r, int l) {
         super(t, r);            // Вызов конструктора суперкласса
@@ -140,7 +140,7 @@ class AbsGame {
                 ((Roguelike)games[i]).showLevels();                 // Для Roguelike: показать уровни
             }
 
-            System.out.println(); // Пустая строка между объектами
+            System.out.println();
         }
     }
 }
